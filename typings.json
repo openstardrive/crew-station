@@ -1,0 +1,11 @@
+{
+  "ambientDependencies": {
+    "axios": "github:DefinitelyTyped/DefinitelyTyped/axios/axios.d.ts#7de6c3dd94feaeb21f20054b9f30d5dabc5efabd",
+    "react": "github:DefinitelyTyped/DefinitelyTyped/react/react.d.ts#3a44f976ba58e05adb666295d59168ef5e99ae17",
+    "react-dom": "github:DefinitelyTyped/DefinitelyTyped/react/react-dom.d.ts#b9642fb8ac07f7164dc643ddd1fa99b58ae9be8b"
+  },
+  "dependencies": {
+    "lodash": "github:typed-typings/npm-lodash#7ccf9dc406a792d702067f4eab0fa8df4109fcaa",
+    "redux": "github:andrew-w-ross/typings-redux#2e0b57e18c6240d17fde045573d74e649762437b"
+  }
+}
