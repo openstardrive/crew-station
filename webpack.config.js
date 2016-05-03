@@ -2,7 +2,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   entry: [
-    './src/index.ts'
+    './lib/index.tsx'
   ],
   output: {
     path: __dirname + '/dist',
