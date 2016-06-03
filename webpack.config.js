@@ -10,13 +10,6 @@ module.exports = {
   },
   module: {
     loaders: [
-      // {
-      //   test: /\.js$/,
-      //   loader: 'babel',
-      //   query: {
-      //     presets: ['es2015', 'stage-0', 'react']
-      //   }
-      // },
       {
         test: /\.tsx?$/,
         loader: 'ts-loader!tslint-loader'
