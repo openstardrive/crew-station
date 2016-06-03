@@ -10,12 +10,13 @@ import { Provider } from 'react-redux'
 import { Router, Route, browserHistory } from 'react-router'
 
 import { reducer } from './actions/index.ts'
+import { loggedReducer } from './lib/logged-reducer.ts'
 
 import { Menu } from './menu/Menu.tsx'
 import { Thrusters } from './screens/thrusters/Thrusters.tsx'
 import { Sensors } from './screens/sensors/Sensors.tsx'
 
-let store = createStore(reducer)
+const store = createStore(loggedReducer(reducer, process.env.INCLUDE_LOGS))
 
 
 render(
