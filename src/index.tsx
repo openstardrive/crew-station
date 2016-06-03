@@ -10,9 +10,11 @@ import { Provider } from 'react-redux'
 import { Router, Route, browserHistory } from 'react-router'
 import { syncHistoryWithStore } from 'react-router-redux'
 
-import { AppState } from './types/app.ts'
+import { AppState, ScreenID } from './types/app.ts'
 import { ID } from './types/generic.ts'
+
 import { reducer } from './actions/index.ts'
+import { setActiveScreenId } from './actions/activeScreenId/index.ts'
 import { loggedReducer } from './lib/logged-reducer.ts'
 import { generateId } from './lib/id.ts'
 
@@ -35,8 +37,18 @@ render(
     <Provider store={store}>
         <Router history={history}>
             <Route path='/' component={Menu}>
-                <Route path={sensorInfo.route} component={Sensors}/>
-                <Route path={thrusterInfo.route} component={Thrusters}/>
+                <Route
+                    path={sensorInfo.route}
+                    component={Sensors}
+                    onEnter={setActiveScreen(sensorInfo.id)}
+                    onLeave={setActiveScreen(null)}
+                />
+                <Route
+                    path={thrusterInfo.route}
+                    component={Thrusters}
+                    onEnter={setActiveScreen(thrusterInfo.id)}
+                    onLeave={setActiveScreen(null)}
+                />
             </Route>
         </Router>
     </Provider>,
@@ -44,11 +56,14 @@ render(
 )
 
 
-
+function setActiveScreen(screenId:ScreenID) {
+    return () => store.dispatch( setActiveScreenId(screenId) )
+}
 
 
 function defaultState(stationId:ID):AppState {
     return {
+        activeScreenId: null,
         config: {
             stationId: stationId,
             availableScreenIds: ['sensors', 'thrusters']

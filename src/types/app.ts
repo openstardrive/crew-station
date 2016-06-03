@@ -1,6 +1,7 @@
 import { URL, ID, HasId } from './generic.ts'
 
 export interface AppState {
+    activeScreenId: ScreenID  // I don't love this; there should be a way to get this info from the router
     config: AppConfig
     screens: ScreenStateMap
     systems: SystemStateMap
@@ -26,7 +27,8 @@ export interface AppConfig {
     // assetsEndpoint: URL
 }
 
-export interface ScreenInfo extends HasId {
+export interface ScreenInfo {
+    id: ScreenID
     name: string
     route: URL
     requiredSystemIds: SystemID[]
