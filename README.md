@@ -18,12 +18,12 @@ An OpenStardrive crew station.
 
 - Create a JSON build config file
 
-    {
+    ```{
         "apiEndpoint": "http://localhost:3000/api",
         "publicEndpoint": "http://localhost:3001",
         "assetsEndpoint": "http://localhost:3000/assets",
         "includeLogs": true
-    }
+    }```
 
 - Build
     - `OSD_CREW_BUILD_CONFIG="/path/to/config.json" npm run build-production`
