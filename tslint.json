@@ -11,7 +11,7 @@
     "no-bitwise": true,
     "no-conditional-assignment": true,
     "no-construct": true,
-    "no-default-export": false,
+    "no-default-export": true,
     "no-duplicate-key": true,
     "no-duplicate-variable": true,
     "no-eval": true,
@@ -33,7 +33,7 @@
     "trailing-comma": [true, {"multiline": "never", "singleline": "never"}],
     "triple-equals": [true, "allow-null-check"],
     "use-strict": true,
-    "variable-name": [true, "ban-keywords", "check-format", "allow-leading-underscore"],
+    "variable-name": [true, "ban-keywords", "check-format", "allow-leading-underscore", "allow-pascal-case"],
     "whitespace": [true, "check-branch", "check-decl", "check-module", "check-separator", "check-typecast"]
   }
 }
