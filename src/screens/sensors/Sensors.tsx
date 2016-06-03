@@ -2,8 +2,16 @@ import * as React from 'react'
 import { connect } from 'react-redux'
 
 import { ImmutableComponent } from '../../lib/immutable-component.ts'
-import { AppState } from '../../types/app.ts'
+import { AppState, ScreenInfo } from '../../types/app.ts'
 
+export const info:ScreenInfo = {
+    id: 'sensors',
+    name: 'sensors',
+    route: '/sensors',
+    requiredSystemIds: [
+        'sensors'
+    ]
+}
 
 interface StateProps {}
 

@@ -1,4 +1,4 @@
-import { URL, ID } from './generic.ts'
+import { URL, ID, HasId } from './generic.ts'
 
 export interface AppState {
     config: AppConfig
@@ -10,19 +10,23 @@ export interface SystemStateMap {
 
 }
 
+export type SystemID = 'sensors' | 'thrusters'
+
 export interface ScreenStateMap {}
 
+export type ScreenID = 'sensors' | 'thrusters'
 
 
 export interface AppConfig {
     stationId: ID
-    screens: ScreenConfig[]
+    availableScreenIds: ScreenID[]
     // apiEndpoint: URL
     // publicEndpoint: URL
     // assetsEndpoint: URL
 }
 
-export interface ScreenConfig {
+export interface ScreenInfo extends HasId {
+    name: string
     route: URL
-    requiredSystems: string[]
+    requiredSystemIds: SystemID[]
 }

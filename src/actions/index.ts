@@ -7,7 +7,7 @@ export function defaultState():AppState {
     return {
         config: {
             stationId: generateId(),
-            screens: []
+            availableScreenIds: ['sensors', 'thrusters']
         },
         screens: {},
         systems: {}
