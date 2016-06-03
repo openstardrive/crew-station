@@ -4,6 +4,7 @@ export interface AppState {
     config: AppConfig
     screens: ScreenStateMap
     systems: SystemStateMap
+    routing?: any  //TODO: type correctly
 }
 
 export interface SystemStateMap {

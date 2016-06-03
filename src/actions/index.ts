@@ -1,23 +1,31 @@
+import { combineReducers } from 'redux'
+import { routerReducer } from 'react-router-redux'
+
 import { generateId } from '../lib/id.ts'
 
-import { AppState } from '../types/app.ts'
-import { Action } from '../types/third-party.ts'
 
-export function defaultState():AppState {
-    return {
-        config: {
-            stationId: generateId(),
-            availableScreenIds: ['sensors', 'thrusters']
-        },
-        screens: {},
-        systems: {}
+export const reducer = combineReducers({
+    config: config,
+    screens: screens,
+    systems: systems,
+    routing: routerReducer
+})
+
+function systems (sys, action) {
+    return {}
+}
+
+function screens (src, action) {
+    return {}
+}
+
+function config (conf, action) {
+    if (!conf) return {
+        stationId: generateId(),
+        availableScreenIds: ['sensors', 'thrusters']
     }
+    return conf
 }
-
-export function reducer(state:AppState = defaultState(), action:Action<any>):AppState {
-    return state
-}
-
 
 
 

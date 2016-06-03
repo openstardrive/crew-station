@@ -8,6 +8,7 @@ import { createStore } from 'redux'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import { Router, Route, browserHistory } from 'react-router'
+import { syncHistoryWithStore } from 'react-router-redux'
 
 import { AppState } from './types/app.ts'
 import { ID } from './types/generic.ts'
@@ -16,24 +17,26 @@ import { loggedReducer } from './lib/logged-reducer.ts'
 import { generateId } from './lib/id.ts'
 
 import { Menu } from './menu/Menu.tsx'
-import { Thrusters } from './screens/thrusters/Thrusters.tsx'
-import { Sensors } from './screens/sensors/Sensors.tsx'
+import { Thrusters, info as thrusterInfo } from './screens/thrusters/Thrusters.tsx'
+import { Sensors, info as sensorInfo } from './screens/sensors/Sensors.tsx'
 
 
-const stationId = localStorage.getItem('osd-station-id') || generateId()
-localStorage.setItem('osd-station-id', stationId)
+const LOCAL_STORAGE_ID_KEY = 'osd-station-id'
+const stationId = localStorage.getItem(LOCAL_STORAGE_ID_KEY) || generateId()
+localStorage.setItem(LOCAL_STORAGE_ID_KEY, stationId)
 
 const initialState = defaultState(stationId)
 
 const store = createStore(loggedReducer(reducer, process.env.INCLUDE_LOGS), initialState)
+const history = syncHistoryWithStore(browserHistory, store)
 
 
 render(
     <Provider store={store}>
-        <Router history={browserHistory}>
+        <Router history={history}>
             <Route path='/' component={Menu}>
-                <Route path='/sensors' component={Sensors}/>
-                <Route path='/thrusters' component={Thrusters}/>
+                <Route path={sensorInfo.route} component={Sensors}/>
+                <Route path={thrusterInfo.route} component={Thrusters}/>
             </Route>
         </Router>
     </Provider>,
