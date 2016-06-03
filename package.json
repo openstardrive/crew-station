@@ -32,7 +32,10 @@
   },
   "scripts": {
     "start": "webpack-dev-server",
-    "test": "mocha"
+    "build": "webpack",
+    "build-production": "npm test && NODE_ENV='production' npm run build",
+    "test": "echo 'add a test!'",
+    "update-typings": "./node_modules/.bin/typings install"
   },
   "repository": {
     "type": "git",

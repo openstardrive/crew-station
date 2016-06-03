@@ -1,3 +1,6 @@
+declare const process
+if (process.env.INCLUDE_LOGS) console.log('env', process.env)
+
 import './index.css'
 
 import * as React from 'react'
@@ -13,6 +16,7 @@ import { Thrusters } from './screens/thrusters/Thrusters.tsx'
 import { Sensors } from './screens/sensors/Sensors.tsx'
 
 let store = createStore(reducer)
+
 
 render(
     <Provider store={store}>

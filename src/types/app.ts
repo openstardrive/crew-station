@@ -17,6 +17,9 @@ export interface ScreenStateMap {}
 export interface AppConfig {
     stationId: ID
     screens: ScreenConfig[]
+    // apiEndpoint: URL
+    // publicEndpoint: URL
+    // assetsEndpoint: URL
 }
 
 export interface ScreenConfig {
