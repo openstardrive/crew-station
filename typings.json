@@ -1,13 +1,13 @@
 {
-  "ambientDependencies": {
-    "axios": "github:DefinitelyTyped/DefinitelyTyped/axios/axios.d.ts#7de6c3dd94feaeb21f20054b9f30d5dabc5efabd",
-    "react": "github:DefinitelyTyped/DefinitelyTyped/react/react.d.ts#3a44f976ba58e05adb666295d59168ef5e99ae17",
-    "react-dom": "github:DefinitelyTyped/DefinitelyTyped/react/react-dom.d.ts#b9642fb8ac07f7164dc643ddd1fa99b58ae9be8b",
-    "react-redux": "github:DefinitelyTyped/DefinitelyTyped/react-redux/react-redux.d.ts#0b96933934c2e37a749aad8e38e23214e21e7dab",
-    "redux": "github:DefinitelyTyped/DefinitelyTyped/redux/redux.d.ts#c2bfaedeee7ae4ed5e0f01ebcf4af7acfe2c77c3",
-    "redux-thunk": "github:DefinitelyTyped/DefinitelyTyped/redux-thunk/redux-thunk.d.ts#7de6c3dd94feaeb21f20054b9f30d5dabc5efabd"
-  },
   "dependencies": {
-    "lodash": "github:typed-typings/npm-lodash#7ccf9dc406a792d702067f4eab0fa8df4109fcaa"
+    "lodash": "registry:npm/lodash#4.0.0+20160416211519"
+  },
+  "globalDependencies": {
+    "axios": "registry:dt/axios#0.9.1+20160317120654",
+    "react": "github:DefinitelyTyped/DefinitelyTyped/react/react.d.ts#ecaf8c1c3f858e4b73f508c2a7dc831561d2097f",
+    "react-addons-pure-render-mixin": "registry:dt/react-addons-pure-render-mixin#0.14.0+20160316155526",
+    "react-dom": "github:DefinitelyTyped/DefinitelyTyped/react/react-dom.d.ts#56295f5058cac7ae458540423c50ac2dcf9fc711",
+    "react-redux": "github:DefinitelyTyped/DefinitelyTyped/react-redux/react-redux.d.ts#0b96933934c2e37a749aad8e38e23214e21e7dab",
+    "redux": "github:DefinitelyTyped/DefinitelyTyped/redux/redux.d.ts#c2bfaedeee7ae4ed5e0f01ebcf4af7acfe2c77c3"
   }
 }
