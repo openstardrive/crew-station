@@ -17,7 +17,7 @@ render(
     <Provider store={store}>
         <div>Crew Station</div>
     </Provider>,
-    document.getElementById("app")
+    document.getElementById('app')
 )
 
 

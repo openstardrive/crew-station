@@ -20,6 +20,8 @@
   },
   "devDependencies": {
     "mocha": "^2.4.5",
+    "tslint": "^3.10.2",
+    "tslint-loader": "^2.1.4",
     "typescript": "^1.8.10",
     "typings": "^0.8.1",
     "webpack-dev-server": "^1.14.1"

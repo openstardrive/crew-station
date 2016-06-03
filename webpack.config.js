@@ -2,7 +2,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   entry: [
-    './lib/index.tsx'
+    './src/index.tsx'
   ],
   output: {
     path: __dirname + '/dist',
@@ -19,7 +19,7 @@ module.exports = {
       // },
       {
         test: /\.tsx?$/,
-        loader: 'ts-loader'
+        loader: 'ts-loader!tslint-loader'
       },
       {
         test: /\.css$/,
