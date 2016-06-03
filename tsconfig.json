@@ -8,6 +8,7 @@
     "node_modules"
   ],
   "files" : [
+    "./typings-custom/index.d.ts",
     "./typings/index.d.ts"
   ]
 }

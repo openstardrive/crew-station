@@ -6,6 +6,8 @@ import { createStore } from 'redux'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 
+import { reducer } from './actions/index.ts'
+
 // import reducer from './station/reducer'
 // import Station from './station'
 
@@ -23,6 +25,6 @@ render(
 )
 
 
-function reducer(state:{} = {}, action:any) {  //delete me soon; use actual reducers
-    return state
-}
+// function reducer(state:{} = {}, action:any) {  //delete me soon; use actual reducers
+//     return state
+// }

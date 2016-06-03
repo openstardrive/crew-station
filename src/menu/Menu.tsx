@@ -2,7 +2,7 @@ import * as React from 'react'
 import { connect } from 'react-redux'
 
 import { ImmutableComponent } from '../lib/immutable-component.ts'
-import { AppState } from '../types.ts'
+import { AppState } from '../types/app.ts'
 
 
 interface StateProps {}
