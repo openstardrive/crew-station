@@ -1,9 +1,12 @@
+import './style.css'
+
 import * as React from 'react'
 import { connect } from 'react-redux'
 
 import { ImmutableComponent } from '../../lib/immutable-component.ts'
 import { AppState, ScreenInfo, ScreenID } from '../../types/app.ts'
 import { SensorContact } from '../../systems/types.ts'
+import { RadarScreen } from './RadarScreen.tsx'
 
 export const id:ScreenID = 'sensors'
 export const info:ScreenInfo = {
@@ -24,16 +27,21 @@ interface DispatchProps {}
 interface Props extends StateProps, DispatchProps {}
 
 class Component extends ImmutableComponent<Props, {}> {
-
     render() {
-        return <div>{this.props.contacts.length}</div>
+        return (
+            <div>
+                <div>Hol</div>
+                <RadarScreen contacts={this.props.contacts}/>
+            </div>
+       )
     }
 }
 
 
 function mapStateToProps(state:AppState):StateProps {
+    const contacts = (!!state.systems[id]) ? state.systems[id].contacts : []
     return {
-        contacts: state.systems[id].contacts
+        contacts: contacts
     }
 }
 

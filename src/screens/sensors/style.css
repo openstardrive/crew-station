@@ -1,0 +1,28 @@
+.sensors {
+
+}
+
+.sensors-radar-screen {
+    width: 500px;
+    background-color: black;
+}
+
+.sensors-contact-text {
+    font-size: .05px;
+    fill: white;
+    stroke: none;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.sensors-contact-circle {
+    fill: yellow;
+    stroke: yellow;
+    stroke-width: .003px;
+}
+
+.sensors-grid-line {
+    stroke: green;
+    stroke-width: .003px;
+}
