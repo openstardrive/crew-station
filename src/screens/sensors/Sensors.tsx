@@ -1,4 +1,4 @@
-import './style.css'
+import './style.scss'
 
 import * as React from 'react'
 import { connect } from 'react-redux'
@@ -30,7 +30,6 @@ class Component extends ImmutableComponent<Props, {}> {
     render() {
         return (
             <div>
-                <div>Hol</div>
                 <RadarScreen contacts={this.props.contacts}/>
             </div>
        )

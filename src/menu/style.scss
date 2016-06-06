@@ -1,0 +1,48 @@
+@import "../lib/style/color.scss";
+
+$sidebar-width: 200px;
+
+.menu {
+    position:relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+.menu-inner {
+    position:absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    width:$sidebar-width;
+    background-color: $background-light;
+    padding:10px;
+}
+
+.menu-link {
+    width:100%;
+    padding:5px 20px;
+    border-radius: 5px;
+    background-color: $primary;
+    color: $secondary;
+    margin-bottom: 5px;
+    & a {
+        color: $secondary;
+        text-decoration: none;
+    }
+    &:hover {
+        background-color: $tertiary;
+        & a {
+            color: $primary;
+        }
+    }
+
+}
+
+.menu-children {
+    position:absolute;
+    top:0;
+    left:$sidebar-width;
+    bottom:0;
+    right:0;
+    padding:10px;
+}

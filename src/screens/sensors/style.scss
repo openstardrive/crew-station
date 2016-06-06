@@ -1,3 +1,5 @@
+@import '../../lib/style/color.scss';
+
 .sensors {
 
 }
@@ -9,7 +11,7 @@
 
 .sensors-contact-text {
     font-size: .05px;
-    fill: white;
+    fill: $primary;
     stroke: none;
     pointer-events: none;
     user-select: none;
@@ -17,12 +19,12 @@
 }
 
 .sensors-contact-circle {
-    fill: yellow;
-    stroke: yellow;
+    fill: $primary;
+    stroke: $primary;
     stroke-width: .003px;
 }
 
 .sensors-grid-line {
-    stroke: green;
+    stroke: $tertiary;
     stroke-width: .003px;
 }

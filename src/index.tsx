@@ -1,7 +1,7 @@
 declare const process
 if (process.env.INCLUDE_LOGS) console.log('env', process.env)
 
-import './index.css'
+import './style.scss'
 
 import * as React from 'react'
 import { createStore } from 'redux'
