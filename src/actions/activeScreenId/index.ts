@@ -32,7 +32,6 @@ export function setActiveScreenIdReducer(state:State, action:Action<ActiveScreen
 //////////////////////
 
 export function reducer(screenId:State = null, action:Action<any>):State {
-    console.log('correct reducer')
     switch (action.type) {
         case ACTIVE_SCREEN_ID_SET:
             return setActiveScreenIdReducer(screenId, action)

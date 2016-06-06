@@ -4,6 +4,7 @@ import { routerReducer } from 'react-router-redux'
 import { generateId } from '../lib/id.ts'
 
 import { reducer as activeScreenId } from './activeScreenId/index.ts'
+import { reducer as systems } from './systems/index.ts'
 
 
 export const reducer = combineReducers({
@@ -14,10 +15,6 @@ export const reducer = combineReducers({
     routing: routerReducer
 })
 
-
-function systems (sys, action) {
-    return {}
-}
 
 function screens (src, action) {
     return {}
