@@ -35,7 +35,7 @@ module.exports = {
     ]
   },
   devServer: {
-    port: 3001,
+    port: 3002,
     historyApiFallback: true
   },
   plugins: [
@@ -43,7 +43,7 @@ module.exports = {
       inject: false,
       template: 'node_modules/html-webpack-template/index.ejs',
       title: 'React',
-      devServer: 'http://localhost:3001',
+      devServer: 'http://localhost:3002',
       appMountId: 'app'
     }),
     new webpack.DefinePlugin({

@@ -9,12 +9,14 @@ import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import { Router, Route, browserHistory } from 'react-router'
 import { syncHistoryWithStore } from 'react-router-redux'
+import { get } from 'axios'
 
 import { AppState, ScreenID } from './types/app.ts'
 import { ID } from './types/generic.ts'
 
 import { reducer } from './actions/index.ts'
 import { setActiveScreenId } from './actions/activeScreenId/index.ts'
+import { updateSystems } from './actions/systems/index.ts'
 import { loggedReducer } from './lib/logged-reducer.ts'
 import { generateId } from './lib/id.ts'
 
@@ -32,6 +34,7 @@ const initialState = defaultState(stationId)
 const store = createStore(loggedReducer(reducer, process.env.INCLUDE_LOGS), initialState)
 const history = syncHistoryWithStore(browserHistory, store)
 
+startPolling()
 
 render(
     <Provider store={store}>
@@ -72,3 +75,22 @@ function defaultState(stationId:ID):AppState {
         systems: {}
     }
 }
+
+
+function startPolling(){
+    setInterval(getServerState, 500)
+}
+
+function getServerState() {
+    return get<any>(process.env.API_ENDPOINT+'/state')
+    .then((rs)=>{
+        const state = rs.data
+        const systemsState = state.systems.reduce((acc, val)=> {
+            acc[val.id] = val
+            return acc
+        }, {})
+        return store.dispatch(updateSystems(systemsState))
+    })
+}
+
+

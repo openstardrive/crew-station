@@ -3,9 +3,10 @@ import { ScreenID } from '../../types/app.ts'
 
 export type State = ScreenID
 
-///////////////////////////////
-/// SET ACTIVE SCREEN ID //////
-///////////////////////////////
+
+
+
+
 
 export const ACTIVE_SCREEN_ID_SET = 'ACTIVE_SCREEN_ID_SET'
 
@@ -27,9 +28,10 @@ export function setActiveScreenIdReducer(state:State, action:Action<ActiveScreen
 }
 
 
-//////////////////////
-/// Reducer //////////
-//////////////////////
+
+
+
+
 
 export function reducer(screenId:State = null, action:Action<any>):State {
     switch (action.type) {
