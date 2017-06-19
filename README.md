@@ -12,7 +12,7 @@ An OpenStardrive crew station.
 - Start the dev server.
     - `npm start`
     - Be sure to start the [api server](https://github.com/openstardrive/server) as well!
-- Go to `http://localhost:3001` in your web browser [of choice](https://www.google.com/chrome/browser/desktop/).
+- Go to `http://localhost:3002` in your web browser [of choice](https://www.google.com/chrome/browser/desktop/).
 
 ## Production build
 
@@ -21,7 +21,7 @@ An OpenStardrive crew station.
     ```json
     {
         "apiEndpoint": "http://localhost:3000/api",
-        "publicEndpoint": "http://localhost:3001",
+        "publicEndpoint": "http://localhost:3002",
         "assetsEndpoint": "http://localhost:3000/assets",
         "includeLogs": true
     }
